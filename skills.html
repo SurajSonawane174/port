@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Technologies</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .background {
+            width: 100vw;
+            height: 100vh;
+            background-image: url('bg-2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: fixed;
+            /* Prevent overflow */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            max-width: 80%;
+            color: white;
+            position: absolute;
+            top: 0;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, purple, red);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: gray;
+            font-size: 20px;
+        }
+
+        .swiper-container {
+            width: 60%;
+            max-height: 200px;
+            overflow: hidden;
+            /* Adjust max height */
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: auto;
+            height: 80px;
+            /* Adjust the height as needed */
+        }
+
+        .light-cube {
+            position: relative;
+            top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+
+        .light {
+            height: 10px;
+            width: 50%;
+            max-width: 400px;
+            min-width: 200px;
+            margin: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: white;
+            box-shadow: 0 0px 4px rgb(255, 255, 255), 0 0px 40px rgba(0, 0, 255, 0.719),
+                0 20px 40px rgb(211, 211, 255);
+            perspective: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .text-color {
+            color: rgb(239, 232, 238);
+        }
+
+        .light-container {
+            height: 100vh;
+            width: 80vw;
+            /* background-color: rgb(35, 34, 34); */
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            position: relative;
+            animation: fadeIn 2s linear forwards;
+            top: 0;
+            /* z-index: 100; */
+        }
+
+        .light.active::before {
+            height: 200px;
+        }
+
+        .light::before {
+            content: "";
+            position: absolute;
+            height: 0px;
+            /* max-width: 400px; */
+            width: 100%;
+            min-width: 200px;
+            top: 0px;
+            left: 0px;
+            transform: scaleX(1.4) rotateX(30deg);
+            filter: blur(40px);
+            background: linear-gradient(to bottom,
+                    rgb(225, 177, 255),
+                    rgba(136, 96, 230, 0.534));
+            transition: height 0.5s ease;
+        }
+
+        /* cube */
+
+        .skills {
+            position: absolute;
+            /* top: -8rem; */
+            /* top: 0; */
+            top: 20vh;
+            /* left: 35vw; */
+            width: 80vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 4s linear forwards;
+        }
+
+        .container {
+            height: 30vw;
+            width: 30vw;
+            position: relative;
+            /* top: 30vh; */
+            /* left: 35vw; */
+            /* margin: auto; */
+            /* transform: translate(-50%, -50%); */
+            perspective: 1000px;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            z-index: 50;
+            cursor: pointer;
+        }
+
+        .card {
+            height: 12vw;
+            width: 12vw;
+            border: 1px solid white;
+            /* background-color: black; */
+            background: transparent;
+            box-sizing: border-box;
+            position: absolute;
+            transition: all 1s;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: transparent;
+        }
+
+        .box {
+            height: 12vw;
+            width: 12vw;
+            position: absolute;
+            /* top: 100px; */
+            /* left: px; */
+            transform-style: preserve-3d;
+            /* animation: animate 5s infinite; */
+            /* background-color: white; */
+        }
+
+        .animate {
+            animation: animate 5s infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+
+            25% {
+                transform: rotateX(-45deg) rotateY(-45deg);
+            }
+
+            50% {
+                transform: rotateX(45deg) rotateY(45deg);
+            }
+
+            75% {
+                transform: rotateX(-45deg) rotateY(45deg);
+            }
+
+            100% {
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+        }
+
+        #front {
+            transform: translateZ(6vw);
+        }
+
+        #back {
+            transform: translateZ(-6vw);
+        }
+
+        #left {
+            right: 6vw;
+            transform: rotateY(-90deg);
+        }
+
+        #right {
+            left: 6vw;
+            transform: rotateY(90deg);
+        }
+
+        #top {
+            bottom: 6vw;
+            transform: rotateX(90deg);
+        }
+
+        #bottom {
+            top: 6vw;
+            transform: rotateX(-90deg);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                visibility: hidden;
+
+            }
+
+            100% {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        input {
+            height: 50px;
+            width: 100px;
+            background: pink;
+            font-size: 22px;
+            cursor: pointer;
+            position: absolute;
+            top: -100px;
+            left: 12vw;
+        }
+
+        .container:hover #front {
+            transform: translateZ(10vw) rotateY(360deg);
+        }
+
+        .container:hover #back {
+            transform: translateZ(-10vw) rotateY(360deg);
+        }
+
+        .container:hover #left {
+            right: 10vw;
+        }
+
+        .container:hover #right {
+            left: 10vw;
+        }
+
+        .container:hover #top {
+            bottom: 10vw;
+        }
+
+        .container:hover #bottom {
+            top: 10vw;
+        }
+
+        :root {
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text--color: #fff;
+            --main-color: #0ef;
+            --bg-color-trans: rgba(31, 36, 45, 0.5);
+        }
+
+
+
+        .circle {
+            height: 3.5rem;
+            width: 3.5rem;
+            color: aqua;
+            border: 1px solid black;
+            position: absolute;
+            border-radius: 50%;
+            animation: circularMotion 16s linear infinite, fadeIn 1s linear forwards;
+            transition: .5s ease;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            top: 1rem;
+            right: 1rem;
+            /* background-color: black; */
+
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            100% {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .circle:hover {
+            box-shadow: 0 0 1rem var(--main-color);
+            color: var(--bg-color);
+            background-color: var(--main-color);
+            border: none;
+
+
+        }
+
+        .circle:hover .span-text {
+            display: block;
+            transition: .5s ease;
+        }
+
+        .text-logo {
+            /* position: absolute; */
+            left: 50%;
+            /* top: 50%; */
+        }
+
+        .span-text {
+            position: absolute;
+            left: 4rem;
+            display: none;
+            color: white;
+            margin: 10px;
+            padding: 5px;
+            color: #0ef;
+            /* background-color: rgba(19, 19, 19, 0.1); */
+            background-color: #919597;
+            border-radius: 1rem;
+            backdrop-filter: blur(5px);
+            font-size: 1rem;
+            /* text-decoration: underline; */
+            text-decoration-color: #0ef;
+            transition: all;
+        }
+        @media(max-width:425px){
+            .light::before {
+            
+            transform: scaleX(1) rotateX(30deg);
+            
+        }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+    </div>
+    <a href="index.html" target="_blank" class="circle">
+        <span class="text-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </span>
+        <!-- <span class="span-text">Home</span> -->
+    </a>
+    <div class="content">
+        <div class="header">
+            <h1 class="title">Skills <span class="gradient-text"> & </span> Technologies</h1>
+            <p class="subtitle">Using the latest tech this world has to offer</p>
+        </div>
+        <div class="swiper-container swiper1">
+            <div class="swiper-wrapper">
+                <!-- Slides will be dynamically inserted here -->
+            </div>
+        </div>
+        <div class="swiper-container swiper2">
+            <div class="swiper-wrapper">
+                <!-- Slides will be dynamically inserted here -->
+            </div>
+        </div>
+        <div class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam officia hic quidem corporis error beatae
+            inventore dolorum voluptates aperiam placeat. Incidunt vel, delectus error modi sapiente, quam rem iure at
+            atque, ea ullam tempore illum sed odio quibusdam aliquid sequi beatae? Asperiores magni iste consequatur
+            tempore accusamus, repudiandae aperiam, cupiditate omnis provident dicta alias qui quibusdam harum numquam
+            esse inventore quod vero expedita doloribus ipsam recusandae saepe eligendi? Illum aut quibusdam
+            necessitatibus tenetur iste voluptatum pariatur ipsam possimus corrupti, alias debitis tempore voluptatem
+            quod, ad consequatur perspiciatis minus a eum rem ullam vel nemo. Repudiandae excepturi provident placeat
+            accusamus amet laudantium quia nam voluptate, impedit ducimus quae. Consequatur, asperiores. Animi sunt
+            suscipit asperiores voluptatem, veniam dolorum quod esse veritatis magnam, harum fugiat officiis soluta!
+            Nisi ullam esse quidem reprehenderit, magnam maxime aspernatur non magni. At sequi commodi ullam, maxime
+            fugiat, temporibus veritatis repellendus, omnis dignissimos ipsa mollitia ad harum voluptatibus veniam quos
+            unde. Modi quaerat quos corporis possimus. Est deleniti eius doloremque ratione neque quam maiores quas quis
+            distinctio, necessitatibus expedita architecto inventore impedit commodi sapiente voluptas magni vero
+            aspernatur recusandae eos iusto non reprehenderit. Laboriosam ullam iure, qui molestias aperiam quis sunt
+            sint fugit provident eveniet in nemo unde id rerum ratione. Culpa, quibusdam laborum? Esse officia sit, quam
+            non suscipit placeat, dolore repellendus eius sunt eaque doloribus expedita iusto quidem. Dolorum eligendi
+            tenetur eius? Ab quod voluptates consectetur repudiandae corrupti dolore facere commodi placeat dolor
+            reiciendis quae adipisci voluptatem distinctio ex, neque ipsum repellendus deserunt dolores mollitia,
+            tempore pariatur est sunt! A veritatis quisquam dolorum possimus recusandae sed ex omnis quis quam pariatur
+            facilis qui dolores doloremque, velit totam modi accusantium? Doloribus adipisci necessitatibus accusantium
+            explicabo nemo dolore maxime eligendi atque, modi iusto, tempora et optio nam molestiae unde temporibus?
+            Quibusdam, deleniti illum! Maiores assumenda eaque quidem harum cumque hic architecto eligendi, ea laborum
+            facilis repudiandae, voluptate odit soluta perspiciatis, dolorem quaerat. Dolore rerum quaerat nesciunt quam
+            magnam officiis excepturi accusamus laboriosam in ratione? Omnis asperiores magni possimus! Aperiam laborum
+            atque amet odit iure debitis voluptas sapiente voluptate corporis modi necessitatibus quisquam earum harum
+            unde, eos assumenda repudiandae asperiores beatae voluptatibus libero. Veniam perspiciatis porro minima cum
+            ipsam consequatur. Doloribus, soluta. Maxime consequuntur vero repudiandae! Eius eum quam, sapiente dolore
+            molestiae sint provident iusto dolorem nam in tempore facilis sequi deserunt. Debitis dolorum autem illo.
+            Aut, dolor? Labore, excepturi? Alias dolorem placeat sunt labore expedita perspiciatis nihil illum provident
+            molestiae ratione culpa, iste earum quibusdam, odit doloremque praesentium minus repellat nobis. Repellat
+            nemo quod nihil rerum quos, libero ex autem et! Enim nulla ipsum beatae dolorem in possimus ea, modi
+            voluptate nihil officia, qui itaque aperiam, distinctio perspiciatis placeat sequi est deleniti omnis quae
+            id! Repellat iure rem expedita perspiciatis dolorum quis fugit repudiandae! Magni quaerat et neque,
+            molestiae, consequuntur odit incidunt eius aperiam rem expedita aliquam sed quibusdam sit harum assumenda
+            ratione dolorem inventore fugit velit error eos tenetur. Veniam suscipit dolorem voluptates! Facere dicta
+            enim ipsam dolore, accusamus nobis perspiciatis officiis excepturi a ex magni quas cupiditate magnam
+            distinctio quae iure consectetur, deserunt, mollitia vitae tempore debitis reprehenderit numquam? Nihil
+            tempora similique vel tenetur harum consectetur facilis unde voluptate, sed omnis beatae culpa sit nulla non
+            earum laudantium architecto consequuntur quis voluptates minima quisquam aperiam laboriosam est. Beatae aut
+            quibusdam error modi numquam deserunt vitae qui consequatur vero voluptatibus nulla suscipit explicabo
+            corrupti, ad id perferendis porro consectetur, sunt incidunt. Optio, modi, earum, ut voluptate impedit in
+            cupiditate reprehenderit alias ea porro omnis provident beatae fugiat esse totam eligendi perspiciatis
+           emque eum. Nesciunt iste tempore cumque quasi in quis pariatur dolor,
+            iusto ex aliquid quam atque sapiente nihil natus veritatis! Similique voluptas eius alias in consequatur
+            perspiciatis eum explicabo dicta ab. Distinctio, officiis. Officiis, qui? Voluptates dolore sequi, ratione,
+            deleniti facilis fuga quisquam optio et rem dolorem, amet iusto aliquid velit perspiciatis! Maxime ad quis
+            dolorem tenetur ullam sint in harum enim, neque sapiente illum, reprehenderit repellat, ipsa temporibus
+            ipsum. Distinctio similique itaque minima porro, aperiam quidem dignissimos eos doloremque officiis error
+            esse ab ea reiciendis? Quaerat enim repellendus quod atque quibusdam possimus illo nobis iusto, ut quas.
+            Quisquam quae cupiditate soluta pariatur officiis maiores, debitis quaerat eaque impedit perferendis
+            incidunt. Pariatur iusto a rem alias necessitatibus quia, accusantium laborum officiis! Minus provident quo
+            vero ipsa magnam ratione aperiam assumenda possimus corrupti.
+        </div>
+        <div class="light-cube">
+
+            <div class="light-container">
+                <div class="light active">
+                    <div style="    
+                    color: #fff;
+                    position: relative;
+                    top: 50px;
+                    font-size: 40px;
+                    font-weight: 700;" data-aos="fade-zoom-in" class="aos-init aos-animate">
+                        <span class="gradient-text">Expert</span>
+                        <span>
+                            In
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="skills">
+
+                <div class="container">
+
+                    <div class="box cube animate">
+                        <div id="front" class="card">
+                            <img src="icons8-java-logo-64.png" alt="Front">
+                        </div>
+                        <div id="back" class="card">
+                            <img src="https://img.icons8.com/?size=100&id=uLDrtp8o8zTG&format=png&color=000000.png"
+                                alt="Back">
+                        </div>
+                        <div id="left" class="card">
+                            <img src="icons8-c++-64.png" alt="Left">
+                        </div>
+                        <div id="right" class="card">
+                            <img src="https://img.icons8.com/?size=100&id=laVIsJnTtYoj&format=png&color=000000.webp"
+                                alt="Right">
+                        </div>
+                        <div id="top" class="card">
+                            <img src="icons8-c-sharp-logo-64.png" alt="Top">
+                        </div>
+                        <div id="bottom" class="card">
+
+                            <img src="icons8-html-logo-64.png" alt="Bottom">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     <!-- scroll reveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+      // scrol reavela
+      ScrollReveal({
+        reset: true,
+        distance: "180px",
+        duration: 2000,
+        delay: 200
+      });
+      // ScrollReveal().reveal('.second', { origin: 'right' });
+      // ScrollReveal().reveal('.first', { origin: 'left' });
+      ScrollReveal().reveal('.subtitle , .header', { origin: 'top' });
+      ScrollReveal().reveal('.swiper1', { origin: 'right' });
+      ScrollReveal().reveal('.swiper2', { origin: 'left' });
+      ScrollReveal().reveal('.light-container,.skills, .lorem', { origin: 'bottom' });
+  
+    </script>
+    <script>
+        const SkillData = [
+            {
+                name: "Skill 1",
+                Image: "py_trans.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 2",
+                Image: "cpptrans2.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 3",
+                Image: "docker.webp",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 1",
+                Image: "framer.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 2",
+                Image: "html_trans.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 3",
+                Image: "javatransperant.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 1",
+                Image: "js_trans.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 2",
+                Image: "mongodb.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 3",
+                Image: "mui.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 1",
+                Image: "mysql.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 2",
+                Image: "redux.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 3",
+                Image: "react.png",
+                width: 100,
+                height: 100
+            },
+            {
+                name: "Skill 1",
+                Image: "tailwind.png",
+                width: 100,
+                height: 100
+            },
+            // {
+            //     name: "Skill 2",
+            //     Image: "py_trans.png",
+            //     width: 100,
+            //     height: 100
+            // },
+            // {
+            //     name: "Skill 3",
+            //     Image: "py_trans.png",
+            //     width: 100,
+            //     height: 100
+            // },
+            // {
+            //     name: "Skill 1",
+            //     Image: "py_trans.png",
+            //     width: 100,
+            //     height: 100
+            // },
+            // {
+            //     name: "Skill 2",
+            //     Image: "py_trans.png",
+            //     width: 100,
+            //     height: 100
+            // },
+            // {
+            //     name: "Skill 3",
+            //     Image: "py_trans.png",
+            //     width: 100,
+            //     height: 100
+            // },
+            // Add more skills as needed
+        ];
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const swiperContainers = document.querySelectorAll('.swiper-container');
+
+            SkillData.forEach(skill => {
+                swiperContainers.forEach(container => {
+                    const swiperWrapper = container.querySelector('.swiper-wrapper');
+
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+
+                    const img = document.createElement('img');
+                    img.src = skill.Image;
+                    img.alt = skill.name;
+                    img.width = skill.width;
+                    img.height = skill.height;
+
+                    slide.appendChild(img);
+                    swiperWrapper.appendChild(slide);
+                });
+            });
+
+            new Swiper('.swiper1', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+                speed: 5000,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+
+            new Swiper('.swiper2', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    reverseDirection: true,
+                },
+                speed: 5000,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+        });
+        const cube = document.querySelector('.cube');
+        const container = document.querySelector('.container');
+        let timeoutId;
+
+        document.addEventListener('mousemove', (e) => {
+            clearTimeout(timeoutId);
+            cube.classList.remove('animate');
+
+            const rect = container.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width * 2 - 1;
+            const y = (e.clientY - rect.top) / rect.height * 2 - 1;
+            const rotateX = y * 50;
+            const rotateY = x * 50;
+            cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            timeoutId = setTimeout(() => {
+                cube.style.transform = ''; // Clear inline transform style
+                cube.classList.add('animate');
+            }, 1000); // 1 second of inactivity
+        });
+    </script>
+</body>
+
+</html>
