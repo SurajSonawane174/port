@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css.css">
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <style>
     /* styles.css */
@@ -147,6 +148,44 @@
       padding: .5rem;
       margin-left: 0;
       padding-left: 0;
+    }
+    
+    .mobile{
+      /* position: absolute; */
+    }
+    .mobile {
+      width: fit-content;
+    }
+
+    .mobile a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+      height: 3rem;
+      background: transparent;
+      border: 0.2rem solid var(--main-color);
+      border-radius: 50%;
+      font-size: 2rem;
+      color: var(--main-color);
+      margin: 7px;
+      transition: 0.5s ease;
+      font-size: 1.5rem;
+    }
+
+    .mobile a:hover {
+      background: var(--main-color);
+      color: var(--second-bg-color);
+      box-shadow: 0 0 1rem var(--main-color);
+    }
+    
+    .mobile a{
+      height: 1.5rem;
+      width: 1.5rem;
+      border: 1px solid aqua;
+    }
+    .mobile a .bx{
+      font-size: 1.1rem;
     }
 
     @media (min-width: 768px) {
@@ -357,9 +396,9 @@
       transition: all;
     }
 
-    @media (max-width:1024px) {
+    @media (max-width:1023px) {
       .social-media {
-        display: none;
+        /* display: none; */
         /* display: hidden; */
       }
 
@@ -388,10 +427,16 @@
         display: none;
 
       }
+      .social-media{
+        display: none;
+      }
 
       .mobile-buttons {
         /* display: block; */
         display: flex;
+        justify-content: center;
+        align-items: center;
+        /* flex-direction: row; */
 
       }
 
@@ -480,6 +525,17 @@
         padding: 0;
 
       }
+      
+    
+    
+    .mobile a{
+      height: 1.2rem;
+      width: 1.2rem;
+      border: 1px solid aqua;
+    }
+    .mobile a .bx{
+      font-size: .8rem;
+    }
 
       .mobile-buttons a {
         font-size: .8rem;
@@ -508,8 +564,10 @@
         font-size: 1.5rem;
       }
 
-      
+
     }
+    
+    
   </style>
 
 </head>
@@ -517,7 +575,7 @@
 <body>
   <main class="main-container">
     <div class="background">
-      <a href="practice.html" target="_blank" class="circle">
+      <a href="index.html" target="_blank" class="circle">
         <span class="text-logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -535,31 +593,39 @@
             And I'm a
             <span class="gradient-text multiple-text"></span>
           </h3>
-          <!-- <span class="gradient-text"><h3 class="into">And I'm a</h3><span>Web Development</span> </span>
-        </h3> -->
+
           <p class="description">
             Creative, Passionate, and Enthusiastic about Technology
           </p>
-          <div class="buttons-container">
-            <a target="_blank" href="finalskill.html" class="button learn-more">Learn more</a>
-            <a target="_blank" href="project.html" class="button my-projects">My projects</a>
-            <a target="_blank" href="contact.html" class="button contact-me">Contact me</a>
-          </div>
-          <div class="social-media">
-            <a target="_blank" href="#"><i class='bx bxl-facebook'></i></a>
-            <a target="_blank " href="#"><i class='bx bxl-twitter'></i></a>
-            <a target="_blank" href="https://www.instagram.com/suraj.sonawane267/"><i
-                class='bx bxl-instagram-alt'></i></a>
-            <a target="_blank" href="#"><i class='bx bxl-linkedin'></i></a>
+        </span>
+        <div class="buttons-container">
+          <a target="_blank" href="resume.pdf" class="button learn-more">Learn more</a>
+          <a target="_blank" href="project.html" class="button my-projects">My projects</a>
+          <a target="_blank" href="contact.html" class="button contact-me">Contact me</a>
+        </div>
+        <div class="social-media">
+          <!-- <a target="_blank" href="#"><i class='bx bxl-facebook'></i></a> -->
+          <a target="_blank " href="https://github.com/SurajSonawane174"><i class='bx bxl-github'></i></a>
+          <a target="_blank" href="https://www.instagram.com/suraj.sonawane267/"><i
+              class='bx bxl-instagram-alt'></i></a>
+          <a target="_blank" href="https://www.linkedin.com/in/suraj-sonawane-53a4a6314/"><i class='bx bxl-linkedin'></i></a>
 
-          </div>
+        </div>
 
       </div>
     </div>
-    </div>
+
+    
 
     <div class="mobile-buttons">
-      <a target="_blank" href="finalskill.html" class="button learn-more">Learn more</a>
+      <div class="mobile">
+        <a target="_blank" href="https://github.com/SurajSonawane174"><i class='bx bxl-github'></i></a>
+        <!-- <a target="_blank " href="#"><i class='bx bxl-twitter'></i></a> -->
+        <a target="_blank" href="https://www.instagram.com/suraj.sonawane267/"><i class='bx bxl-instagram-alt'></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/suraj-sonawane-53a4a6314/"><i class='bx bxl-linkedin'></i></a>
+  
+      </div>
+      <a target="_blank" href="resume.pdf" class="button learn-more">Learn more</a>
       <a target="_blank" href="project.html" class="button my-projects">My projects</a>
       <a target="_blank" href="contact.html" class="button contact-me">Contact me</a>
     </div>
