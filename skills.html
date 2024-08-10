@@ -531,6 +531,29 @@
             top: 50px;
             transform: rotateX(-90deg);
         }
+              .container:hover #front {
+            transform: translateZ(25vw) rotateY(360deg);
+        }
+
+        .container:hover #back {
+            transform: translateZ(-25vw) rotateY(360deg);
+        }
+
+        .container:hover #left {
+            right: 25vw;
+        }
+
+        .container:hover #right {
+            left: 25vw;
+        }
+
+        .container:hover #top {
+            bottom: 25vw;
+        }
+
+        .container:hover #bottom {
+            top: 25vw;
+        }
         }
     </style>
 </head>
