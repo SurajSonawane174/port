@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,96 +14,110 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-attachment: fixed; /* Make the background fixed */
+            background-attachment: fixed;
+            /* Make the background fixed */
             width: 100%;
-            height: 100vh; /* Ensure the body takes full viewport height */
-            overflow: hidden; /* Prevent scrolling */
+            height: 100vh;
+            /* Ensure the body takes full viewport height */
+            overflow: hidden;
+            /* Prevent scrolling */
         }
+
         :root {
-  --bg-color: #1f242d;
-  --second-bg-color: #323946;
-  --text--color: #fff;
-  --main-color: #0ef;
-  --bg-color-trans: rgba(31, 36, 45, 0.5);
-}
-        
-.circle{
-    height: 3.5rem;
-    width: 3.5rem;
-    color: aqua;
-    border: 1px solid black;
-    position: absolute;
-    border-radius: 50%;
-    animation: circularMotion 16s linear infinite, fadeIn 1s linear forwards;
-    transition: .5s ease;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    top: 1rem;
-    right: 1rem;
-    z-index: 2;
-    /* background-color: black; */
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text--color: #fff;
+            --main-color: #0ef;
+            --bg-color-trans: rgba(31, 36, 45, 0.5);
+        }
 
-}
-@keyframes fadeIn {
-    0%{
-        opacity: 0;
-        visibility: hidden;
-    }
-    100%{
-        opacity: 1;
-        visibility: visible;
-    }
-}
+        .circle {
+            height: 3.5rem;
+            width: 3.5rem;
+            color: aqua;
+            border: 1px solid black;
+            position: absolute;
+            border-radius: 50%;
+            animation: circularMotion 16s linear infinite, fadeIn 1s linear forwards;
+            transition: .5s ease;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            top: 1rem;
+            right: 1rem;
+            z-index: 2;
+            /* background-color: black; */
 
-.circle:hover {
-    box-shadow: 0 0 1rem var(--main-color);
-    color: var(--bg-color);
-    background-color: var(--main-color);
-    border: none;
-    
-}
-.circle:hover .span-text{
-    display: block;
-    transition: .5s ease;
-}
+        }
 
-.text-logo{
-    /* position: absolute; */
-    left: 50%;
-    /* top: 50%; */
-}
-.span-text{
-    position: absolute;
-    left: 4rem;
-    display: none;
-    color: white;
-    margin: 10px;
-    padding: 5px;
-    color: #0ef;
-    /* background-color: rgba(19, 19, 19, 0.1); */
-    background-color: #919597;
-    border-radius: 1rem;
-    backdrop-filter: blur(5px);
-    font-size: 1rem;
-    /* text-decoration: underline; */
-    text-decoration-color:#0ef ;
-    transition: all;
-}
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            100% {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .circle:hover {
+            box-shadow: 0 0 1rem var(--main-color);
+            color: var(--bg-color);
+            background-color: var(--main-color);
+            border: none;
+
+        }
+
+        .circle:hover .span-text {
+            display: block;
+            transition: .5s ease;
+        }
+
+        .text-logo {
+            /* position: absolute; */
+            left: 50%;
+            /* top: 50%; */
+        }
+
+        .span-text {
+            position: absolute;
+            left: 4rem;
+            display: none;
+            color: white;
+            margin: 10px;
+            padding: 5px;
+            color: #0ef;
+            /* background-color: rgba(19, 19, 19, 0.1); */
+            background-color: #919597;
+            border-radius: 1rem;
+            backdrop-filter: blur(5px);
+            font-size: 1rem;
+            /* text-decoration: underline; */
+            text-decoration-color: #0ef;
+            transition: all;
+        }
 
         .py-16 {
             padding-top: 4rem;
             padding-bottom: 4rem;
-            position: absolute; /* Set section to absolute */
-            top: 0; /* Position at the top */
-            left: 0; /* Position at the left */
-            width: 100%; /* Full width */
-            height: 100vh; /* Full viewport height */
-            overflow: auto; /* Allow scrolling within the section */
+            position: absolute;
+            /* Set section to absolute */
+            top: 0;
+            /* Position at the top */
+            left: 0;
+            /* Position at the left */
+            width: 100%;
+            /* Full width */
+            height: 100vh;
+            /* Full viewport height */
+            overflow: auto;
+            /* Allow scrolling within the section */
         }
 
         .pb-300px {
@@ -140,6 +155,7 @@
             flex-direction: column;
             align-items: center;
             gap: 1.25rem;
+            /* margin-bottom: ; */
         }
 
         .card {
@@ -198,26 +214,38 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
+                /* margin-bottom: 100px; */
             }
+
         }
-        @media(max-width:600px){
-            .card{
+
+        @media(max-width:600px) {
+            .card {
                 width: 200px;
                 height: 350px;
             }
-            .card.expanded{
+
+            .card.expanded {
                 width: 300px;
             }
         }
-         @media(max-width:768px) {
+
+        @media(max-width:768px) {
             .card-container {
                 margin-bottom: 100px;
             }
         }
+        .card{
+            /* object-fit: cover; */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
+
 <body>
-    <a href="practice.html" target="_blank" class="circle">
+    <a href="index.html" target="_blank" class="circle">
         <span class="text-logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -233,56 +261,49 @@
             <p class="subtitle">Check out My latest works</p>
         </div>
         <div class="card-container">
-            <div class="card" onclick="handleCardClick(0)" style="background-image: url('city1.png')">
+            <div class="card" onclick="handleCardClick(0)" style="background-image: url('port.png' )">
                 <div class="card-content">
                     <div class="card-footer">
-                        <h2>Project 1</h2>
-                        <p class="description">This is a description, write whatever you need here, this is just text for a test</p>
+                        <h2>PORTFOLIO</h2>
+                        <p class="description">"Detailed Look at My Portfolio Website Creation"</p>
                     </div>
                 </div>
             </div>
-            <div class="card" onclick="handleCardClick(1)" style="background-image: url('city1.png')">
+            <div class="card" onclick="handleCardClick(1)" style="background-image: url('aarambh.png')">
                 <div class="card-content">
                     <div class="card-footer">
-                        <h2>Project 2</h2>
-                        <p class="description">This is a description, write whatever you need here, this is just text for a test</p>
+                        <h2>AARAMBH STUDIO'S</h2>
+                        <p class="description">"Experience the artistry of AARAMBH STUDIO through a sleek and intuitive website that beautifully showcases a diverse portfolio of captivating photography."</p>
                     </div>
                 </div>
             </div>
-          
-          
-            <div class="card" onclick="handleCardClick(2)" style="background-image: url('city2.png')">
+
+
+            <div class="card" onclick="handleCardClick(2)" style="background-image: url('port2.png')">
                 <div class="card-content">
                     <div class="card-footer">
-                        <h2>Project 3</h2>
-                        <p class="description">This is a description, write whatever you need here, this is just text for a test</p>
+                        <h2>PORTFOLIO</h2>
+                        <p class="description">"Detailed Look at My Portfolio Website Creation"</p>
                     </div>
                 </div>
             </div>
-            <div class="card" onclick="handleCardClick(3)" style="background-image: url('city3.png')">
+            <div class="card" onclick="handleCardClick(3)" style="background-image: url('amazon.png')">
                 <div class="card-content">
                     <div class="card-footer">
-                        <h2>Project 4</h2>
-                        <p class="description">This is a description, write whatever you need here, this is just text for a test</p>
+                        <h2>AMAZON CLONE 4</h2>
+                        <p class="description">Developing the Clone Website of the Amazon using HTML, CSS, JS</p>
                     </div>
                 </div>
             </div>
-            <div class="card" onclick="handleCardClick(4)" style="background-image: url('planet1.png')">
+            <div class="card" onclick="handleCardClick(4)" style="background-image: url('tictactoe.png')">
                 <div class="card-content">
                     <div class="card-footer">
-                        <h2>Project 5</h2>
-                        <p class="description">This is a description, write whatever you need here, this is just text for a test</p>
+                        <h2>GAME</h2>
+                        <p class="description">TIC-TAC-TOE Game</p>
                     </div>
                 </div>
             </div>
-            <div class="card" onclick="handleCardClick(5)" style="background-image: url('planet2.png')">
-                <div class="card-content">
-                    <div class="card-footer">
-                        <h2>Project 6</h2>
-                        <p class="description">This is a description, write whatever you need here, this is just text for a test</p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -307,20 +328,21 @@
             });
         }
     </script>
-     <script>
+    <script>
         // scrol reavela
         ScrollReveal({
-          reset: false,
-          distance: "120px",
-          duration: 2000,
-          delay: 200
+            reset: false,
+            distance: "120px",
+            duration: 2000,
+            delay: 200
         });
-       
+
         ScrollReveal().reveal('.title , .subtitle', { origin: 'left' });
         ScrollReveal().reveal('.card-container', { origin: 'bottom' });
-      
-    
-      </script>
-    
+
+
+    </script>
+
 </body>
+
 </html>
